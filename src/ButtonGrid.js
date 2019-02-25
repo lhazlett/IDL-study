@@ -6,12 +6,17 @@ import Paper from '@material-ui/core/Paper';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 
-import { WORDS } from './constants'
+import blue from '@material-ui/core/colors/blue';
+
+import { BUTTON_LABELS } from './constants'
 
 const styles = theme => ({
+  root: {
+    flexGrow: 1,
+  },
   button: {
     margin: theme.spacing.unit,
-    width: theme.spacing.unit * 20,
+    textAlign: 'center',
   },
   input: {
     display: 'none',
@@ -19,18 +24,21 @@ const styles = theme => ({
 });
 
 class ButtonGrid extends Component {
+
   render() {
+    const { classes } = this.props
+    
     return (
-      <div className='Grid' styles={{}}>
-        <Grid className='Grid' container spacing={24}>
-          {WORDS.map((word) => {
+      <div className={classes.root}>
+        <Grid container spacing={24}>
+          {BUTTON_LABELS.map((word) => {
             return (
-              <Grid item xs={3}>
+              <Grid item xs={3} key={word}>
                 <Button 
-                  className={this.props.classes.button}
-                  // variant="contained" 
-                  variant="outlined" 
-                  color="primary" 
+                  className={classes.button}
+                  variant="contained" 
+                  // color="primary" 
+                  fullWidth
                   size="large">
                   {word}
                 </Button>

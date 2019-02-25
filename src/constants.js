@@ -1,4 +1,4 @@
-export const WORDS = [
+export const BUTTON_LABELS = [
 	'annoying',
 	'emotional', 
 	'kind',
