@@ -25,7 +25,9 @@ class App extends Component {
     return (
       <MuiThemeProvider theme={theme}>
         <CssBaseline />
-        <ButtonGrid />
+        <div style={{ padding: '10px', height: '100vh', width: '100vw'  }}>
+          <ButtonGrid />
+        </div>
       </MuiThemeProvider>
     )
   }
